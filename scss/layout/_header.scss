@@ -1,0 +1,142 @@
+@use "../base/variables" as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 110px;
+    display: grid;
+    place-items: center;
+
+    &__cnt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 67px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__items {
+        &:not(:first-child) {
+            margin-left: 69px;
+        }
+    }
+
+    &__links {
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $yellow;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
+
+    &__btn {
+        border: 2px solid $yellow;
+        padding: 10px 20px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $yellow;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &__burger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+        width: 25px;
+        height: 20px;
+        z-index: 1001;
+
+        span {
+            height: 3px;
+            width: 100%;
+            background-color: $yellow;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+
+            &:nth-child(1) {
+                width: 50%;
+            }
+
+            &:nth-child(3) {
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 81px;
+
+        &__burger {
+            display: flex;
+        }
+
+        &__nav {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0;
+            background-color: transparent;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            z-index: 1000;
+        }
+
+        &__nav.active {
+            max-height: 500px;
+            padding: 20px 0;
+        }
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        &__items {
+            margin-left: 0 !important;
+        }
+
+        &__btn {
+            margin-top: 15px;
+        }
+    }
+}

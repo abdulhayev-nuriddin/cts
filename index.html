@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Designed and developed by Universal, Abdulhayev Nuriddin"
+    />
+    <meta name="author" content="Universal, Abdulhayev Nuriddin" />
+    <title>Designed by Universal</title>
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> -->
+  </head>
+
+  <body>
+    <!-- <div id="loader"></div> -->
+    <div id="scrollProgressBar"></div>
+    <button id="themeToggle" aria-label="Switch theme" class="hidden-content">
+      <img src="./images/moon.png" alt="Toggle Theme" id="themeIcon" />
+    </button>
+
+    <header class="header hidden-content">
+      <div class="cnt header__cnt">
+        <a href="./index.html" class="header__banner">
+          <img src="./images/logo.svg" alt="logo" class="header__logo" />
+        </a>
+
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__items">
+              <a href="" class="header__links">+998-555-00-4444</a>
+            </li>
+            <li class="header__items">
+              <a href="" class="header__links">cts_admin_tg</a>
+            </li>
+            <li class="header__items">
+              <a href="" class="header__links">Toshkent, Sergeli, Fayzli 3</a>
+            </li>
+          </ul>
+          <button class="header__btn">bog’lanish</button>
+        </nav>
+
+        <button class="header__burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    <script>
+      const burger = document.querySelector(".header__burger");
+      const nav = document.querySelector(".header__nav");
+      const links = document.querySelectorAll(".header__links");
+
+      function closeMenu() {
+        nav.classList.remove("active");
+        burger.classList.remove("active");
+      }
+
+      // Burger bosilganda menyuni ochish/yopish
+      burger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        burger.classList.toggle("active");
+      });
+
+      // Menyudan link bosilganda menyuni yopish
+      links.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Menyudan tashqariga bosilganda yopish uchun:
+      // documentga emas, faqat header hududidan tashqariga bosish
+      document.addEventListener("click", (e) => {
+        const isClickInsideNav = nav.contains(e.target);
+        const isBurgerClick = burger.contains(e.target);
+        if (!isClickInsideNav && !isBurgerClick) {
+          closeMenu();
+        }
+      });
+    </script>
+
+    <main class="main hidden-content">
+      <section class="hero">
+        <div class="cnt hero__cnt"></div>
+      </section>
+    </main>
+
+    <footer class="footer hidden-content">
+      <div class="cnt footer__cnt"></div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <!-- <script src="./bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>
