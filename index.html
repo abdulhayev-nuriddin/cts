@@ -11,7 +11,7 @@
     <title>Designed by Universal</title>
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./css/main.css" />
-    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> -->
   </head>
 
@@ -31,13 +31,13 @@
         <nav class="header__nav">
           <ul class="header__list">
             <li class="header__items">
-              <a href="" class="header__links">+998-555-00-4444</a>
+              <a href="#" class="header__links">+998-555-00-4444</a>
             </li>
             <li class="header__items">
-              <a href="" class="header__links">cts_admin_tg</a>
+              <a href="#" class="header__links">cts_admin_tg</a>
             </li>
             <li class="header__items">
-              <a href="" class="header__links">Toshkent, Sergeli, Fayzli 3</a>
+              <a href="#" class="header__links">Toshkent, Sergeli, Fayzli 3</a>
             </li>
           </ul>
           <button class="header__btn">bog’lanish</button>
@@ -50,41 +50,98 @@
         </button>
       </div>
     </header>
-    <script>
-      const burger = document.querySelector(".header__burger");
-      const nav = document.querySelector(".header__nav");
-      const links = document.querySelectorAll(".header__links");
-
-      function closeMenu() {
-        nav.classList.remove("active");
-        burger.classList.remove("active");
-      }
-
-      // Burger bosilganda menyuni ochish/yopish
-      burger.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        burger.classList.toggle("active");
-      });
-
-      // Menyudan link bosilganda menyuni yopish
-      links.forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
-
-      // Menyudan tashqariga bosilganda yopish uchun:
-      // documentga emas, faqat header hududidan tashqariga bosish
-      document.addEventListener("click", (e) => {
-        const isClickInsideNav = nav.contains(e.target);
-        const isBurgerClick = burger.contains(e.target);
-        if (!isClickInsideNav && !isBurgerClick) {
-          closeMenu();
-        }
-      });
-    </script>
 
     <main class="main hidden-content">
       <section class="hero">
-        <div class="cnt hero__cnt"></div>
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="./images/herobg.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./images/herobg.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./images/herobg.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="select">
+        <div class="cnt select__cnt">
+          <ul class="select__list">
+            <li class="select__items">
+              <a href="#" class="select__links">
+                <img src="./images/selectimg.png" alt="" class="select__img">
+                <h3 class="select__title">ehtiyot qismlar</h3>
+              </a>
+            </li>
+            <li class="select__items">
+              <a href="#" class="select__links">
+                <img src="./images/selectimg2.png" alt="" class="select__img">
+                <h3 class="select__title">katalog</h3>
+              </a>
+            </li>
+            <li class="select__items">
+              <a href="#" class="select__links">
+                <img src="./images/selectimg2.png" alt="" class="select__img">
+                <h3 class="select__title">arenda</h3>
+              </a>
+            </li>
+            <li class="select__items">
+              <a href="#" class="select__links">
+                <img src="./images/selectimg2.png" alt="" class="select__img">
+                <h3 class="select__title">servis va ta’mirlash</h3>
+              </a>
+            </li>
+            <li class="select__items">
+              <a href="#" class="select__links">
+                <img src="./images/selectimg2.png" alt="" class="select__img">
+                <h3 class="select__title">kontaktlar</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="why">
+        <div class="cnt why__cnt"></div>
       </section>
     </main>
 
@@ -93,6 +150,6 @@
     </footer>
 
     <script src="./js/main.js"></script>
-    <!-- <script src="./bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -176,7 +176,7 @@
     --bs-form-invalid-color: #ea868f;
     --bs-form-invalid-border-color: #ea868f
 } */
-
+/* 
 *,
 ::after,
 ::before {
@@ -373,11 +373,6 @@ sub {
 
 sup {
     top: -.5em
-}
-
-a {
-    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-    text-decoration: underline
 }
 
 a:hover {
@@ -604,7 +599,7 @@ summary {
 
 progress {
     vertical-align: baseline
-}
+} */
 
 [hidden] {
     display: none !important

@@ -80,3 +80,30 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleTheme();
   updateScrollProgressBar();
 });
+
+// -----------------------------------------------------------------------------
+
+const burger = document.querySelector(".header__burger");
+const nav = document.querySelector(".header__nav");
+const links = document.querySelectorAll(".header__links");
+
+function closeMenu() {
+  nav.classList.remove("active");
+  burger.classList.remove("active");
+}
+burger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  burger.classList.toggle("active");
+});
+links.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+document.addEventListener("click", (e) => {
+  const isClickInsideNav = nav.contains(e.target);
+  const isBurgerClick = burger.contains(e.target);
+  if (!isClickInsideNav && !isBurgerClick) {
+    closeMenu();
+  }
+});
+
+// -----------------------------------------------------------------------------
