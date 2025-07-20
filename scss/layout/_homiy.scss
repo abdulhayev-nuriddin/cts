@@ -1,0 +1,81 @@
+@use "../base/variables" as *;
+
+.homiy {
+    &__title {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 100%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 20px;
+        line-height: 100%;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 47px;
+    }
+
+    &__items {
+        &:first-child {
+            img {
+                &:nth-child(1n):not(:first-child) {
+                    margin-left: 126px;
+                }
+            }
+        }
+
+        &:last-child {
+            img {
+                &:nth-child(1n) {
+                    margin-left: 110px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .homiy {
+
+        &__title {
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
+
+        &__span {
+            color: $yellow;
+        }
+
+        &__items {
+            img {
+                width: 54px;
+                height: 44px;
+                margin: 0 !important;
+
+                &:first-child,
+                &:last-child {
+                    display: none;
+                }
+            }
+
+            &:first-child {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &:last-child {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+        }
+    }
+}

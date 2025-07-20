@@ -1,0 +1,38 @@
+@use "../base/variables" as *;
+
+.logistic {
+
+    &__cnt {
+        width: calc(100% - 400px);
+        height: 379px;
+        background-color: $yellow;
+        position: relative;
+        margin-bottom: 61px;
+    }
+
+    &__title {
+        position: absolute;
+        top: 40%;
+        // left: 40%;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 80px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $light-bg;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .logistic {
+        &__cnt {
+            width: 100%;
+            height: 151px;
+        }
+
+        &__title {
+            font-size: 25px;
+        }
+    }
+}
