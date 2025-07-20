@@ -1,0 +1,72 @@
+@use "../base/variables" as *;
+
+.production {
+    margin-top: 80px;
+    margin-bottom: 109px;
+
+    &__title {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 100%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__boxes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    &__box {
+        border: 1px solid $dark-bg;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        gap: 18px;
+
+        &__title {
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 100%;
+            text-align: center;
+        }
+
+        &__btn {
+            padding: 20px 25px;
+            background-color: $yellow;
+            color: $dark-text;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 15px;
+            line-height: 100%;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .production {
+
+        &__boxes {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__box {
+            &__title {
+                font-size: 20px;
+            }
+        }
+    }
+}

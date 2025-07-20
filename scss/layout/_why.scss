@@ -1,1 +1,51 @@
-.why {}
+@use "../base/variables" as *;
+
+.why {
+    padding: 100px 0;
+
+    &__cnt {
+        display: grid;
+        place-items: center;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 100%;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 20px;
+        line-height: 100%;
+        color: $yellow;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__video {
+        width: 700px;
+        height: 386px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .why {
+
+        &__title {
+            font-size: 25px;
+        }
+
+        &__text {
+            font-size: 15px;
+        }
+
+        &__video {
+            width: 100%;
+            height: 300px;
+        }
+    }
+}
