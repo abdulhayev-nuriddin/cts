@@ -1,6 +1,6 @@
 @use "../base/variables" as *;
 
-.homiy {
+.partner {
     &__title {
         font-weight: 700;
         font-style: Bold;
@@ -40,7 +40,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .homiy {
+    .partner {
 
         &__title {
             font-weight: 600;

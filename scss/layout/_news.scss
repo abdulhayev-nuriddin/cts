@@ -1,0 +1,80 @@
+@use "../base/variables" as *;
+
+.news {
+    padding-top: 75px;
+    padding-bottom: 65px;
+
+    &__bg {
+        width: 1519px;
+        margin: 0 auto;
+    }
+
+    &__cnt {
+        margin-top: 45px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__box {
+        width: 235px;
+        height: 294px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 15px;
+        line-height: 100%;
+        text-transform: uppercase;
+        margin-top: 14px;
+        margin-bottom: 19px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+    }
+
+    &__btn {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 10px;
+        line-height: 100%;
+        text-transform: uppercase;
+        padding: 10px;
+        color: $light-bg;
+        background-color: $yellow;
+        align-items: center;
+        transition: all 0.3s ease;
+        display: none;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .news {
+
+        &__cnt {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__box {
+            width: 160px;
+            height: 220px;
+        }
+
+        &__btn {
+            display: block;
+        }
+    }
+}
