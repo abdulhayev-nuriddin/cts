@@ -99,14 +99,14 @@ img {
     width: 0;
 }
 
-// .hidden-content {
-//     opacity: 0;
-//     transition: opacity 1s ease;
-// }
+.hidden-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
 
-// .hidden-content.show {
-//     opacity: 1;
-// }
+.hidden-content.show {
+    opacity: 1;
+}
 
 #loader {
     width: 80px;
